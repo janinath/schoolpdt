@@ -1,0 +1,81 @@
+{% extends 'customer/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<nav class="navbar p-md-0 navbar-expand-sm navbar-light border-bottom">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTop4">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                 <a href="#" class="nav-link">   English </a>
+                
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link"> USD </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li><a href="#" class="nav-link"> <i class="fa fa-envelope"></i> Email </a></li>
+            <li><a href="#" class="nav-link"> <i class="fa fa-phone"></i> Call us </a></li>
+        </ul> <!-- list-inline //  -->
+      </div> <!-- navbar-collapse .// -->
+    </div> <!-- container //  -->
+    </nav>
+
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-intro padding-y-sm">
+<div class="container">
+
+<div class="intro-banner-wrap">
+	<img src="{% static 'images/banners/1.jpg' %}" class="img-fluid rounded">
+</div>
+
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name padding-y-sm">
+<div class="container">
+
+<header class="section-heading">
+	<a href="./store.html" class="btn btn-outline-primary float-right">See all</a>
+	<h3 class="section-title">Popular products</h3>
+</header><!-- sect-heading -->
+
+	
+<div class="row">
+	{% for i in product %}
+	<div class="col-md-3">
+		<div class="card card-product-grid">
+			<a href="./product-detail.html" class="img-wrap"> <img src="{{i.p_image.url}}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">{{i.p_name}}</a>
+				<div class="price mt-1">{{i.price}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> 
+	{% endfor %}<!-- col.// -->
+	
+	
+	
+	
+	
+	
+</div> <!-- row.// -->
+
+</div><!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ========================= -->
+
+
+
+
+
+{% endblock %}
+</body>
+</html>
